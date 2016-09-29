@@ -76,5 +76,3 @@ clean << {
     project.file('app.jar').delete()
 }
 
-web: java $JAVA_OPTS -jar app.jar
-
