@@ -25,6 +25,12 @@ apply plugin: 'org.sonarqube'
 
 jar {
     baseName = 'app'
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'es.unizar.webeng.hello.Application'
+        )
+    }
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
