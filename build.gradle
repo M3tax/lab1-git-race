@@ -16,6 +16,7 @@ buildscript {
 
 apply plugin: "spring-boot"
 apply plugin: 'war'
+apply plugin: 'java'
 
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
@@ -23,8 +24,7 @@ apply plugin: 'idea'
 apply plugin: 'org.sonarqube'
 
 jar {
-    baseName = 'hello'
-    version = '1.0'
+    baseName = 'app'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -62,4 +62,7 @@ eclipse {
 	     }
     }
 }
+
+build.finalizedBy(jar)
+
 
