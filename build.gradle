@@ -23,13 +23,12 @@ apply plugin: 'idea'
 
 apply plugin: 'org.sonarqube'
 
+task stage {
+    dependsOn build
+}
+
 jar {
-    baseName = 'app'
-    manifest {
-        attributes(
-                'Main-Class': 'es.unizar.webeng.hello.Application'
-        )
-    }
+    baseName = 'springBoot'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -68,6 +67,5 @@ eclipse {
     }
 }
 
-build.finalizedBy(jar)
 
 
