@@ -25,8 +25,8 @@ apply plugin: 'spring-boot'
 apply plugin: 'org.sonarqube'
 
 jar {
-    baseName = 'spring-test-api'
-    version = '0.1.0'
+    baseName = 'hello'
+    version = '1.0'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -63,19 +63,6 @@ eclipse {
 	         }
 	     }
     }
-}
-
-task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
-    into project.rootDir
-    rename {
-        'app.jar'
-    }
-}
-stage.mustRunAfter(build)
-
-clean << {
-    project.file('app.jar').delete()
 }
 
 
