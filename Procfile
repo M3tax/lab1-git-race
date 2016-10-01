@@ -1,1 +1,1 @@
-web: java -jar build/libs/lab1-git-race.war
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/lab1-git-race.war
