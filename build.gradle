@@ -27,6 +27,11 @@ jar {
     baseName = 'hello'
     version = '1.0'
 }
+
+war {
+    baseName = 'ingweb'
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
